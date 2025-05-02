@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DevAgent | Prompt to Code</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f2f2f2;
+            padding: 30px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        textarea, input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        h2 {
+            color: #333;
+        }
+        .output-section {
+            margin-top: 20px;
+        }
+        .label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>🧠 DevAgent — Prompt Optimizer + Code Generator</h2>
+    <form method="POST">
+        <label for="prompt">Enter a vague or unclear prompt:</label>
+        <textarea id="prompt" name="prompt" rows="4">{{ user_input }}</textarea>
+        <input type="submit" value="Generate Code">
+    </form>
+
+    {% if optimized_prompt %}
+    <div class="output-section">
+        <div class="label">🔍 Optimized Prompt:</div>
+        <pre>{{ optimized_prompt }}</pre>
+    </div>
+    {% endif %}
+
+    {% if code_output %}
+    <div class="output-section">
+        <div class="label">🤖 DeepSeek Coder Output:</div>
+        <pre>{{ code_output }}</pre>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>

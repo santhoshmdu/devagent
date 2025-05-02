@@ -20,7 +20,7 @@ def call_groq_api(system_content, user_content):
             {'role': 'user', 'content': user_content}
         ],
         'temperature': 0.3,
-        'max_tokens': 12000
+        'max_tokens': 9000
     }
 
     response = requests.post(GROQ_URL, headers=headers, json=payload)
