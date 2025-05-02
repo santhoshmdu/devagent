@@ -1,7 +1,12 @@
 import requests
+from dotenv import load_dotenv
+import os
 
-GROQ_API_KEY = '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'
-GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions'
+load_dotenv()
+
+# Retrieve API keys and URL from environment variables
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+GROQ_URL = os.getenv("GROQ_URL")
 
 PROMPT_OPTIMIZER_PROMPT = """
 You are a Prompt Optimizer Agent...
